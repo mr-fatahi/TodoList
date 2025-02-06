@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>لیست تو دو</title>
+  </head>
+  <body>
+    <section class="block todo-app">
+      <section class="todos">
+        <div class="todo__add">
+          <input type="text" placeholder="امروز چه کاری دارید؟" class="input" id="todo-title" />
+          <button class="btn btn--primary add-btn">افزودن</button>
+        </div>
+        <div class="todo__sort__filter">
+          <div class="todo__filter">
+            <select name="" id="">
+              <option value="all">همه</option>
+              <option value="completed">تمام</option>
+              <option value="uncompleted">ناتمام</option>
+            </select>
+            <i class="fa-solid fa-caret-down caret"></i>
+          </div>
+          <div class="todo__sort">
+            <p>مرتب سازی</p>
+            <div class="sort">
+              <span class="badge badge--primary">جدید ترین</span>
+              <span class="badge">قدیمی ترین</span>
+            </div>
+          </div>
+        </div>
+        <ul class="todo__items">
+          <!-- <li class="todo__item">
+            <div class="todo__item__title">
+              <span class="radio"><i class="fa-solid fa-check"></i></span>
+              <p class="title">تمرین برنامه نویسی</p>
+            </div>
+            <div class="todo__item__actions">
+              <button class="btn btn--primary">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="btn btn--secondary">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </li> -->
+        </ul>
+        <div class="todos__status">
+          <p>
+            کارهای تمام شده: <span class="completed-num">2</span> | کارهای ناتمام
+            مانده: <span class="uncompleted-num">3</span>
+          </p>
+        </div>
+      </section>
+    </section>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

@@ -16,7 +16,7 @@ const asceIcon = document.querySelector(".asce");
 
 document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
-  renderTodos(getAllTodos());
+  renderTodos();
 });
 addBtn.addEventListener("click", () => {
   if (todoTitleInput.value === "") {
@@ -107,8 +107,8 @@ function createTodo(id) {
   }
   filterTodo();
   sortTodo();
-  saveTodo(todo);
   renderTodos(filteredTodos);
+  saveAllTodos(todos);
 }
 function filterTodo() {
   switch (filter) {
@@ -139,16 +139,16 @@ function removeTodo(e) {
   const todoId = Number(e.target.dataset.todoId);
   todos = todos.filter((todo) => todo.id !== todoId);
   filterTodo();
-  saveAllTodos(filteredTodos);
   renderTodos(filteredTodos);
+  saveAllTodos(todos);
 }
 function checkTodo(e) {
   const todoId = Number(e.target.dataset.todoId);
   const todo = todos.find((t) => t.id === todoId);
   todo.isCompleted = !todo.isCompleted;
   filterTodo();
-  saveAllTodos(filteredTodos);
   renderTodos(filteredTodos);
+  saveAllTodos(todos);
 }
 function sortTodo() {
   if (sort === "latest") {
@@ -161,12 +161,6 @@ function sortTodo() {
 }
 function getAllTodos() {
   const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
-  return savedTodos;
-}
-function saveTodo(todo) {
-  const savedTodos = getAllTodos();
-  savedTodos.push(todo);
-  localStorage.setItem("todos", JSON.stringify(savedTodos));
   return savedTodos;
 }
 function saveAllTodos(todos) {
